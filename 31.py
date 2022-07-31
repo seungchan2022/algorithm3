@@ -3,7 +3,7 @@ for tc in range(int(input())):
     array = list(map(int, input().split()))
     
     # 2차원 테이블 초기화
-    # dp 테이블과 주어진 금광 정보를 하나의 배열로사용
+    # dp 테이블과 주어진 금광 정보(array)를 하나의 배열로사용
     dp = []
     index = 0
     # 2차원 리스트에 들어갈 원소들을 1줄로 쭉 입력받아서 2차원 리스트에 넣어야 하는 부분(index 활용!!)
