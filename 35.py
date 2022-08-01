@@ -11,6 +11,7 @@ next2, next3, next5 = 2, 3, 5
 # 1 ~ n까지 못생긴 수 찾기
 for i in range(1, n):   # dp[0] = 1
     # 가능한 곱셈 결과 중 가장 작은수 선택
+    dp[i] = min(next2, next3, next5)
     if dp[i] == next2:
         i2 += 1
         next2 = dp[i2] * 2
