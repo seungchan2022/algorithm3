@@ -48,7 +48,15 @@ for i in range(1, n + 1):
         max_node = i
         max_distance = distance[i]
         result = [max_node]
-    elif max_distance == distance[i]:
+    elif max_distance == distance[i]:   # if로 하면 X
         result.append(i)
         
 print(max_node, max_distance, len(result))
+
+"""
+'술래는 1번 헛간에서 출발하는데 동빈이는 1번 헛간으로부터 최단 거리가 가장 먼 헛간에 숨는다'를 보고
+특정 노드에서 출발해 다른 노드를 까지의 최단 거리를 구하는 다익스트라 알고리즘 생각
+'양방향 도로'이기 때문에 그래프 데이터 a, b 가 주어지면 a -> b / b -> a 모두 반영 해주어야 된다
+최단 거리가 가장 긴 곳에 숨어야 하므로 최단 거리 테이블을 모두 구하고 그중에서 가장 큰 값을 구하면 된다
+50 ~ 51 이해 X: 50 -> result.append(max_node) / 51 -> if ~ 가 안되는 이유?
+"""
