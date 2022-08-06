@@ -19,7 +19,8 @@ for i in range(1, g + 1):
 
 result = 0
 for _ in range(p):
-    data = find_parent(parent, int(input()))    # 현재 비행기의 탑승구의 루트 확인
+    # 현재 비행기의 탑승구의 루트 확인(가능한 큰 번호의 탑승구로 도킹 하기 위해)
+    data = find_parent(parent, int(input()))
     if data == 0:   # 현재 루트가 0이라면, 종료
         break
     union_parent(parent, data, data - 1)    # 그렇지 않으면 바로 왼쪽의 집합과 합치기
