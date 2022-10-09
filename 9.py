@@ -25,6 +25,5 @@ def solution(s):
 abcabcdede를 앞에서부터 2개 단위로 자르면 ab, ca, bc, de, de가 되고,
 제일 de는 연속적으로 반복해서 나오기 때문에 abcabc2de로 압축 가능합니다.
 앞에서부터 정해진 단위대로 자르되, 제일 뒤에 남는 문자열만 그대로 붙일 수 있습니다.
-그러므로, 입출력 예시5번을 x / ababcdcd / ababcdcd로 자르는 것은 불가능 
-
+그러므로, 입출력 예시5번을 x / ababcdcd / ababcdcd로 자르는 것은 불가능 -> 따라서 압축 불가
 """
