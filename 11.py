@@ -60,6 +60,7 @@ def simulate():
         # 회전할 시간인 경우 회전
         if index < l and time == info[index][0]:
             direction = turn(direction, info[index][1])
+            index += 1
     return time
 
 print(simulate())
