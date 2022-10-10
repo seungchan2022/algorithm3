@@ -23,7 +23,7 @@ def solution(key, lock):
     n = len(lock)
     m = len(key)
     # 자물쇠의 크기를 기존의 3배로 변환
-    new_lock = [[0] * (n + 3) for _ in range(n + 3)]
+    new_lock = [[0] * (n * 3) for _ in range(n * 3)]
     # 새로운 자물쇠의 중앙 부분에 기존의 자물쇠 넣기
     for i in range(n):
         for j in range(n):
