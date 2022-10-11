@@ -2,7 +2,7 @@ def solution(s):
     answer = len(s)
     # 1개 단위부터 압축단위(step)를 len(s)//2 까지 늘려가며 확인(그이상은 압축 할수 X)
     for step in range(1, len(s) // 2 + 1):
-        result = " "
+        result = ""
         prev = s[0:step] # 앞에서 부터 step 만큼 문자열 추출
         count = 1   # 압축 횟수
         # 단위 크기만큼 증가시키며 이전 문자열과 비교
