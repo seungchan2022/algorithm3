@@ -13,7 +13,7 @@ def solution(n, weak, dist):
         for friends in list(permutations(dist, len(dist))):
             # 최초의 친구 1명 투입
             count = 1
-            # 투입된 친구가 점검할 수 있는 마지막 위치
+            # 처음 투입된 친구가 점검할 수 있는 마지막 위치
             position = weak[start] + friends[count - 1]
             # 시작점부터 모든 취약지점 확인
             for index in range(start, start + length):
