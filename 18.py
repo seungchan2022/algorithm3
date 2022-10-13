@@ -31,8 +31,10 @@ def solution(p):
     if p == '':
         return answer
     index = balanced_index(p)
+    # 두 "균형 잡힌 문자열"로 분리
     u = p[:index + 1]
     v = p[index + 1:]
+    
     # "올바른 괄호 문자열"이면, v에 대해 함수를 수행한 결과를 붙혀 반환
     # "균형잡힌 괄호 문자열"이 "올바른 괄호 문자열"이라면
     if check_proper(u):
