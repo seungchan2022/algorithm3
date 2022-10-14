@@ -5,27 +5,27 @@ graph = []
 for _ in range(n):
     graph.append(list(map(int, input().split())))
 
-dx = [-1, 0, 1, 0]
-dy = [0, -1, 0, 1]
+result = 0      # 총 인구 이동 변수
 
-# 특정위치에서 출발하여 모든 연합을 체크한뒤 데이터 갱신
+dx, dy = [-1, 0, 1, 0], [0, -1, 0, 1]
+
+# 특정 위치에서 출발하여 모든 연합을 체크한뒤 데이터 갱신
 def process(x, y, index):
-    # (x, y)의 위치와 연결된 나라(연합 국가) 정보를 담는 리스트
-    united = []
-    united.append((x, y))   # 현재 x, y좌표 append
+    united = []     # (x, y)의 위치와 연결된 나라(연합국가) 정보를 담는 리스트
+    united.append((x, y))   # 현재 x, y 좌표
     q = deque()
     q.append((x, y))
-    # 연합 인구를 계산할 변수들
-    union[x][y] = index     # 현재 연합의 번호 할당(연합ID)
+    # 연합 인구를 계산할 리스트
+    union[x][y] = index     # 현재 연합의 번호 할당(연합 ID)
     summary = graph[x][y]   # 현재 연합의 총 인구수
-    count = 1               # 현재 연합의 국가수
+    count = 1               #  현재 연합의 수
     while q:
         x, y = q.popleft()
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-            # 인접 국가 확인
-            if 0 <= nx < n and 0 <= ny < n and union[x][y] == -1:
+            # 인접국가 확인
+            if 0 <= nx < n and 0 <= ny < n and union[nx][ny] == -1:
                 if l <= abs(graph[nx][ny] - graph[x][y]) <= r:
                     q.append((nx, ny))
                     # 연합에 추가
@@ -33,18 +33,16 @@ def process(x, y, index):
                     summary += graph[nx][ny]
                     count += 1
                     united.append((nx, ny))
-    # 연합 국가들끼리 인구 분배
+    # 연합 국가끼리 인구 분배
     for i, j in united:
         graph[i][j] = summary // count
-
-# 총 인구 이동 횟수
-total_count = 0
+    
 
 while True:
-    # 연합 처리 되었는지 확인할 2차원 리스트
+    # 연합 처리가 되었는지 확인할 2차원 리스트
     union = [[-1] * n for _ in range(n)]
-    index = 0   # 연합ID
-    # 주어진 graph 정보에서 원소 하나씩 연합처리 시작
+    index = 0   # 연합 ID
+    # 주어진 graph 정보에서 원소 하나씩 연합 처리 시작
     for i in range(n):
         for j in range(n):
             if union[i][j] == -1:   # 연합이 되지 않은 국가들만 처리
@@ -53,9 +51,9 @@ while True:
     # 모든 인구 이동이 끝난 경우
     if index == n * n:
         break
-    total_count += 1
+    result += 1
 
-print(total_count)
+print(result)
 
 
 """
