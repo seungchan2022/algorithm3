@@ -7,8 +7,9 @@ def count_by_range(a, left_value, right_value):
     left_index = bisect_left(a, left_value)
     return right_index - left_index
 
-array = [[] for _ in range(10001)]      # 모든 단어를 길이마다 나누어서 저장하기 위한 리스트
-reversed_array = [[] for _ in range(10001)]     # 모든 단어를 길이마다 나누어 뒤집어서 저장하기 위한 리스트
+# 두개의 2차원 리스트 선언
+array = [[] for _ in range(10001)]      # 모든 단어를 길이마다 나누어서 저장하기 위한 리스트('?'가 뒤에 오는 문자열 리스트)
+reversed_array = [[] for _ in range(10001)]     # 모든 단어를 길이마다 나누어 뒤집어서 저장하기 위한 리스트('?'가 앞에 오는 문자열 리스트)
 
 def solution(words, queries):
     answer = []
