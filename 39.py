@@ -30,7 +30,7 @@ for tc in range(int(input())):
         dist, x, y = heapq.heappop(q)
         if distance[x][y] < dist:   # 처리된적이 있는 노드
             continue
-        for i in range(4):      # 현재 노드와 연결된 노드 확인
+        for i in range(4):      # 현재 노드와 연결된 노드 확인(인접노드 확인)
             nx = x + dx[i]
             ny = y + dy[i]
             # 범위
