@@ -21,6 +21,8 @@ for _ in range(p):
 parent = [i for i in range(g + 1)]
 
 count = 0
+
+# 현재 비행기의 루트 확인
 for i in array:
     root = find(parent, i)
 
