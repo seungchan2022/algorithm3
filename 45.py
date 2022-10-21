@@ -1,3 +1,6 @@
+# 자기보다 낮은 등수를 가진 팀을 가리키도록 방향 그래프를 만들수 있다. 
+# 그래서 순위가 바뀌면 간선의 방향을 반대로 변경하면 된다.
+
 from collections import deque
 import sys
 
